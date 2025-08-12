@@ -25,10 +25,10 @@ const FeaturesSection: React.FC = () => {
             <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
               <Phone className="w-6 h-6 text-blue-400" />
             </div>
-            <h3 className="text-xl font-bold mb-4">מענה אוטומטי לשיחות</h3>
+            <h3 className="text-xl font-bold mb-4">שימור לקוחות</h3>
             <p className="text-gray-400">
-              ממזכירה AI עונה לכל השיחות הנכנסות באופן מקצועי ומנתבת ללקוחות
-              המתאימים
+              הבוט יוזם שיחות עם לקוחות אחרי פגישה, שולח הצעות ומבצעים, ושומר
+              אותך בתודעה שלהם לאורך זמן
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const FeaturesSection: React.FC = () => {
             <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
               <BarChart3 className="w-6 h-6 text-red-400" />
             </div>
-            <h3 className="text-xl font-bold mb-4">דוחות ואנליטיקה</h3>
+            <h3 className="text-xl font-bold mb-4">דוחות ואנליזה</h3>
             <p className="text-gray-400">
               מעקב בזמן אמת אחר ביצועים, זמני מענה ושביעות רצון לקוחות
             </p>

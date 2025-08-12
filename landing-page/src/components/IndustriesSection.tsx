@@ -8,7 +8,7 @@ const IndustriesSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">מתאים לכל תחום</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            הממזכירה AI שלנו משרתת עסקים מכל התחומים
+            העוזר האישי AI שלנו משרת עסקים מכל התחומים
           </p>
         </div>
 

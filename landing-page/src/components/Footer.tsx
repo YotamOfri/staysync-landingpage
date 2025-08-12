@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 space-x-reverse mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="flex items-center space-x-2 space-x-reverse mb-4 gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-0">
                 <Brain className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">ממזכירה AI</span>
+              <span className="text-xl font-bold">עוזר אישי AI</span>
             </div>
             <p className="text-gray-400 mb-4">
-              הממזכירה הדיגיטלית המתקדמת ביותר לעסק שלך
+              העוזר האישי הדיגיטלי המתקדם ביותר לעסק שלך
             </p>
           </div>
 
@@ -103,9 +103,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 ממזכירה AI. כל הזכויות שמורות.
+            © 2025 StaySync. כל הזכויות שמורות.
           </p>
-          <div className="flex items-center space-x-4 space-x-reverse mt-4 md:mt-0">
+          <div className="flex items-center space-x-4 space-x-reverse mt-4 md:mt-0 gap-4">
             <a
               href="#"
               className="text-gray-400 hover:text-white transition-colors"

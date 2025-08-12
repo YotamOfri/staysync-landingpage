@@ -39,7 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <Brain className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">ממזכירה AI</span>
+            <span className="text-xl font-bold">עוזר אישי AI</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -85,7 +85,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
           <div className="hidden md:flex items-center">
             <button className="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              התחל בחינם
+              התחל ללא עלות
             </button>
           </div>
 
@@ -144,7 +144,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
               <div className="pt-4 border-t border-gray-800">
                 <button className="w-full bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4" />
-                  התחל בחינם
+                  התחל ללא עלות
                 </button>
               </div>
             </div>
