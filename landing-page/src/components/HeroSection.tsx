@@ -1,174 +1,89 @@
 import React from "react";
+import { Phone, PlayCircle } from "lucide-react";
+import ChatAnimation from "./ChatAnimation";
+import StatsCounter from "./StatsCounter";
+import { useState } from "react";
+import VideoModal from "./VideoModal";
 
-export default function TermsAndPrivacy() {
+const HeroSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className="relative bg-gray-900 min-h-screen py-20 px-6 sm:px-10 lg:px-20">
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 via-purple-900/20 to-indigo-900/20 pointer-events-none -z-10" />
-
-      <div className="max-w-4xl mx-auto space-y-20 text-gray-300">
-        {/* תנאי שימוש */}
-        <section>
-          <h1 className="text-4xl font-extrabold text-white mb-6 select-none">
-            📜 תנאי שימוש
-          </h1>
-          <p className="mb-6 text-gray-400 italic">
-            עודכן לאחרונה: ‎[תאריך עדכון]‎
-          </p>
-
-          <div className="space-y-6 leading-relaxed">
-            <p>
-              ברוך הבא לשירות הבוט האוטומטי שלנו ("השירות"). השימוש בשירות כפוף
-              לתנאי השימוש המפורטים להלן. בשימוש בשירות, אתה מאשר שקראת, הבנת
-              והסכמת לתנאים אלו.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              1. הגדרות
-            </h2>
-            <p className="text-gray-400">
-              "החברה" – ‎[שם העסק/החברה שלך]‎, המפעילה את השירות.
-              <br />
-              "הבוט" – המערכת האוטומטית המתקשרת עם לקוחות בוואטסאפ ומסונכרנת עם
-              יומנים דיגיטליים.
-              <br />
-              "משתמש" – כל אדם או גורם המשתמש בשירות.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              2. השימוש בשירות
-            </h2>
-            <p className="text-gray-400">
-              השירות נועד לאוטומציה של קביעת, שינוי וביטול פגישות, שליחת תזכורות
-              וניהול תקשורת עסקית עם לקוחות.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              3. שימוש אסור
-            </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-400">
-              <li>למטרות בלתי חוקיות או פוגעניות.</li>
-              <li>לשליחת ספאם או הטרדה.</li>
-              <li>לשימוש העלול לפגוע בפרטיות או בזכויות של צד שלישי.</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              4. שינויים והפסקת השירות
-            </h2>
-            <p className="text-gray-400">
-              החברה שומרת לעצמה את הזכות לשנות, להשעות או להפסיק את השירות בכל
-              עת, עם או בלי הודעה מוקדמת.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              5. הגבלת אחריות
-            </h2>
-            <p className="text-gray-400">
-              השירות ניתן כמות שהוא ("As-Is"). החברה אינה אחראית לכל נזק ישיר או
-              עקיף, אובדן הכנסות, או טעויות בתיאום הנגרמות משימוש בשירות.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              6. שיפוי
-            </h2>
-            <p className="text-gray-400">
-              המשתמש מסכים לשפות את החברה בגין כל תביעה, הפסד או הוצאה הנובעים
-              משימוש בשירות בניגוד לתנאים אלו.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              7. שינויים בתנאי השימוש
-            </h2>
-            <p className="text-gray-400">
-              החברה רשאית לעדכן תנאים אלו מעת לעת. המשך השימוש בשירות מהווה
-              הסכמה לתנאים המעודכנים.
-            </p>
-          </div>
-        </section>
-
-        {/* מדיניות פרטיות */}
-        <section>
-          <h1 className="text-4xl font-extrabold text-white mb-6 select-none">
-            🔒 מדיניות פרטיות
-          </h1>
-          <p className="mb-6 text-gray-400 italic">
-            עודכן לאחרונה: ‎[תאריך עדכון]‎
-          </p>
-
-          <div className="space-y-6 leading-relaxed">
-            <p className="text-gray-400">
-              מדיניות זו מתארת כיצד אנו אוספים, משתמשים ושומרים מידע אישי במסגרת
-              הפעלת הבוט והשירות.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              1. מידע שאנו אוספים
-            </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-400">
-              <li>פרטי התקשרות (שם, מספר טלפון).</li>
-              <li>תוכן הודעות שנשלחות לבוט.</li>
-              <li>פרטי פגישות (תאריך, שעה, הערות).</li>
-              <li>מידע טכני הנדרש לתפקוד השירות.</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              2. איך המידע נאסף
-            </h2>
-            <p className="text-gray-400">
-              המידע נאסף דרך הודעות וואטסאפ, אינטגרציה עם Google Calendar,
-              וטפסים מקוונים.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              3. שימוש במידע
-            </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-400">
-              <li>קביעת, שינוי וביטול פגישות.</li>
-              <li>שליחת תזכורות והודעות ללקוחות.</li>
-              <li>שיפור השירות ופתרון בעיות.</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              4. שיתוף עם צדדים שלישיים
-            </h2>
-            <p className="text-gray-400">
-              אנו משתפים מידע רק עם Google Calendar וכלי אינטגרציה נוספים
-              הנדרשים לפעילות השירות, וכן עם ספקי אחסון מאובטחים.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              5. שמירה ואבטחת מידע
-            </h2>
-            <p className="text-gray-400">
-              אנו נוקטים באמצעי אבטחה מתאימים לשמירת המידע, לרבות הצפנה והגבלת
-              גישה.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              6. שמירת מידע
-            </h2>
-            <p className="text-gray-400">
-              המידע נשמר כל עוד נדרש לצורך מתן השירות או לפי דרישות החוק. ניתן
-              לבקש את מחיקתו בכל עת.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              7. זכויות המשתמש
-            </h2>
-            <p className="text-gray-400">
-              המשתמש רשאי לקבל עותק מהמידע שנשמר עליו, לבקש תיקון או מחיקה של
-              המידע, ולפנות בכל שאלה לכתובת: ‎[אימייל התמיכה שלך]‎.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-white pt-6 border-t border-gray-700">
-              8. שינויים במדיניות
-            </h2>
-            <p className="text-gray-400">
-              החברה רשאית לעדכן מדיניות זו בכל עת. המשך השימוש בשירות מהווה
-              הסכמה למדיניות המעודכנת.
-            </p>
-          </div>
-        </section>
+    <section id="details" className="relative pt-32 pb-20">
+      {/* Background Gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
       </div>
-    </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Main Headline */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 mt-24">
+          <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+            קבעו תורים בקלות
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            הבוט שדואג ללקוחות שלך 24/7
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          הבוט שלנו מנהל שיחות בווטסאפ עם הלקוחות, קובע תורים, עונה לשאלות וחוסך
+          לך זמן – בכל תחום, בכל שעה.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+          <button
+            onClick={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            }}
+            className="bg-indigo-400/85 text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-indigo-300/85 hover:cursor-pointer transition-all transform hover:scale-105 flex items-center duration-200"
+          >
+            התחל ללא עלות
+          </button>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center hover:cursor-pointer hover:bg-white/5 duration-200"
+          >
+            <PlayCircle className="w-5 h-5 ml-2" />
+            צפה בהדגמה
+          </button>
+        </div>
+        {isModalOpen && (
+          <VideoModal
+            videoUrl="/public/videos/ChatBotVideo.mp4"
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
+
+        <ChatAnimation />
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+          <div className="text-center">
+            <div className="text-blue-400">
+              <StatsCounter end={100} suffix="%" />
+            </div>
+            <div className="text-gray-400">זמינות</div>
+          </div>
+          <div className="text-center">
+            <div className="text-purple-400 text-3xl font-bold">24/7</div>
+            <div className="text-gray-400">שירות</div>
+          </div>
+          <div className="text-center">
+            <div className="text-green-400">
+              <StatsCounter end={56} suffix="+" />
+            </div>
+            <div className="text-gray-400">עסקים</div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
-}
+};
+
+export default HeroSection;
