@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Brain, Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import Logo from "@/assets/StaysyncLogo.svg";
 
 interface NavigationProps {
@@ -36,13 +36,16 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              {/* <Brain className="w-5 h-5 text-white" /> */}
+          <a
+            className="flex items-center gap-3 hover:cursor-pointer"
+            href="#details"
+            onClick={(e) => handleNavClick(e, "details")}
+          >
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
               <img className="rounded-md" src={Logo} alt="" />
             </div>
             <span className="text-xl font-bold">StaySync</span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -60,20 +63,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
             >
               תכונות
             </a>
-            <a
-              href="#pricing"
-              onClick={(e) => handleNavClick(e, "pricing")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              מחירים
-            </a>
-            <a
-              href="#about"
-              onClick={(e) => handleNavClick(e, "about")}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              אודות
-            </a>
+
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
@@ -85,8 +75,15 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <button className="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
-              <Phone className="w-4 h-4" />
+            <button
+              className="bg-indigo-400/85 text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-indigo-300/85 hover:cursor-pointer transition-colors flex items-center gap-2"
+              onClick={() => {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                });
+              }}
+            >
               התחל ללא עלות
             </button>
           </div>
@@ -145,7 +142,6 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
               </a>
               <div className="pt-4 border-t border-gray-800">
                 <button className="w-full bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                  <Phone className="w-4 h-4" />
                   התחל ללא עלות
                 </button>
               </div>

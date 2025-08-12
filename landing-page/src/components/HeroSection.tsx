@@ -8,7 +8,7 @@ import VideoModal from "./VideoModal";
 const HeroSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="relative pt-32 pb-20">
+    <section id="details" className="relative pt-32 pb-20">
       {/* Background Gradients */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -16,14 +16,6 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* New Feature Badge */}
-        <div className="inline-flex items-center bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm mb-8 border border-blue-500/30">
-          <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs ml-2">
-            חדש
-          </span>
-          עוזר אישי AI עם תמיכה בווטסאפ והודעות
-        </div>
-
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 mt-24">
           <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
@@ -43,13 +35,20 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-          <button className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center">
-            <Phone className="w-5 h-5 ml-2" />
+          <button
+            onClick={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            }}
+            className="bg-indigo-400/85 text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-indigo-300/85 hover:cursor-pointer transition-all transform hover:scale-105 flex items-center duration-200"
+          >
             התחל ללא עלות
           </button>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center"
+            className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center hover:cursor-pointer hover:bg-white/5 duration-200"
           >
             <PlayCircle className="w-5 h-5 ml-2" />
             צפה בהדגמה

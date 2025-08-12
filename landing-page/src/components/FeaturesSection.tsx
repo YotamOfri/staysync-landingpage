@@ -21,7 +21,7 @@ const FeaturesSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Feature 1 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
               <Phone className="w-6 h-6 text-blue-400" />
             </div>
@@ -33,7 +33,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 2 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
               <MessageCircle className="w-6 h-6 text-purple-400" />
             </div>
@@ -44,7 +44,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 3 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-green-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-green-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6">
               <Calendar className="w-6 h-6 text-green-400" />
             </div>
@@ -55,7 +55,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 4 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-yellow-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-6">
               <Users className="w-6 h-6 text-yellow-400" />
             </div>
@@ -66,7 +66,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 5 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-red-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
               <BarChart3 className="w-6 h-6 text-red-400" />
             </div>
@@ -77,7 +77,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 6 */}
-          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-indigo-500/50 transition-all transform hover:scale-105">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-indigo-500/50 duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
               <Zap className="w-6 h-6 text-indigo-400" />
             </div>

@@ -66,18 +66,24 @@ export function DashboardMockup() {
       value: currentStats.messages,
       icon: MessageCircle,
       color: "blue",
+      bg: "bg-blue-500/10",
+      border: "border-blue-500/30",
     },
     {
       label: "זמן תגובה ממוצע",
       value: currentStats.responseTime,
       icon: Clock,
       color: "green",
+      bg: "bg-green-500/10",
+      border: "border-green-500/30",
     },
     {
       label: "שביעות רצון",
       value: currentStats.satisfaction,
       icon: CheckCircle,
       color: "purple",
+      bg: "bg-purple-500/10",
+      border: "border-purple-500/30",
     },
   ];
 
@@ -108,7 +114,7 @@ export function DashboardMockup() {
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
-            className={`bg-${stat.color}-500/10 border border-${stat.color}-500/30 rounded-xl p-4`}
+            className={`${stat.bg} border ${stat.border} rounded-xl p-4`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

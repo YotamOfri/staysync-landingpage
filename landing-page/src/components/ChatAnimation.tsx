@@ -5,43 +5,52 @@ const messages = [
   { from: "user", text: "היי, אפשר לקבוע תור לתספורת?" },
   {
     from: "bot",
-    text: "בוודאי! בוקר טוב. אני 'אסיסט', העוזר הדיגיטלי של 'מספרת הסטייל'. מתי הכי נוח לך להגיע?",
+    text: "בוודאי! מתי הכי נוח לך להגיע?",
   },
   { from: "user", text: "מחר בבוקר יתאים לי" },
   { from: "bot", text: "מעולה. יש לי תור פנוי מחר בשעה 10:30. זה מתאים לך?" },
   { from: "user", text: "כן, מצוין." },
   {
     from: "bot",
-    text: "נהדר. קבעתי לך תור לתספורת מחר, יום רביעי, בשעה 10:30. שלחתי לך אישור לווצאפ. נתראה!",
+    text: "נהדר. קבעתי לך תור לתספורת מחר, יום רביעי, בשעה 10:30. נתראה!",
   },
 ];
 
 export default function ChatAnimation() {
   const [currentMessages, setCurrentMessages] = useState([]);
-  const timeoutRef = useRef(null);
+  const timeoutsRef = useRef<number[]>([]);
+
+  const clearAllTimeouts = () => {
+    timeoutsRef.current.forEach((id) => clearTimeout(id));
+    timeoutsRef.current = [];
+  };
 
   const playConversation = () => {
     setCurrentMessages([]);
+    clearAllTimeouts();
+
     messages.forEach((msg, i) => {
-      timeoutRef.current = setTimeout(() => {
+      const timeoutId = window.setTimeout(() => {
         setCurrentMessages((prev) => [...prev, msg]);
-      }, i * 2000); // 2 sec delay between each message
+      }, i * 2000);
+      timeoutsRef.current.push(timeoutId);
     });
 
     // Restart after conversation ends
-    timeoutRef.current = setTimeout(() => {
+    const restartTimeoutId = window.setTimeout(() => {
       playConversation();
-    }, messages.length * 2000 + 3000); // Wait 3s after last message
+    }, messages.length * 2000 + 3000);
+    timeoutsRef.current.push(restartTimeoutId);
   };
 
   useEffect(() => {
     playConversation();
-    return () => clearTimeout(timeoutRef.current);
+    return () => clearAllTimeouts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden w-full max-w-lg mx-auto h-[420px] shadow-2xl z-50">
+    <div className="bg-gradient-to-br from-gray-800/30 to-black/30 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden w-full max-w-xl mx-auto h-[420px] shadow-2xl z-50">
       {/* Top bar */}
       <div className="flex items-center gap-2 p-3 border-b border-white/10 bg-gray-900/70">
         <div className="flex gap-1.5">

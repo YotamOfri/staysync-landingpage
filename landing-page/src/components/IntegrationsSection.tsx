@@ -4,7 +4,7 @@ import { IntegrationMockup } from "./animations/MockInterface";
 import { motion } from "framer-motion";
 function IntegrationsSection() {
   return (
-    <div id="how-it-works" className="px-6 lg:px-12 py-20 bg-black/20">
+    <div id="product" className="px-6 lg:px-12 py-20 bg-black/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <motion.h2

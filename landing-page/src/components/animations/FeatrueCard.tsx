@@ -14,7 +14,7 @@ export default function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay, ease: "easeOut" }}
-      className={`relative bg-black/40 rounded-3xl border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-500 ${className}`}
+      className={`relative bg-black/10 rounded-3xl border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-500 ${className}`}
       style={{
         backgroundImage:
           "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",

@@ -14,7 +14,7 @@ const HowItWorksSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-6 border-3 border-purple-500/70">
               <span className="text-2xl font-bold text-white">1</span>
             </div>
             <h3 className="text-xl font-bold mb-4">התאמה אישית</h3>
@@ -25,7 +25,7 @@ const HowItWorksSection: React.FC = () => {
 
           {/* Step 2 */}
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mx-auto mb-6 border-3 border-blue-500/70">
               <span className="text-2xl font-bold text-white">2</span>
             </div>
             <h3 className="text-xl font-bold mb-4">התקנה</h3>
@@ -37,7 +37,7 @@ const HowItWorksSection: React.FC = () => {
 
           {/* Step 3 */}
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-6 border-3 border-green-500/70">
               <span className="text-2xl font-bold text-white">3</span>
             </div>
             <h3 className="text-xl font-bold mb-4">התחל לעבוד</h3>
