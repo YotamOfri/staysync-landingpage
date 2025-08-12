@@ -8,7 +8,7 @@ const VideoModal = ({ videoUrl, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative bg-black rounded-lg overflow-hidden max-w-3xl w-full"
+        className="relative bg-black/80 rounded-xl overflow-hidden max-w-3xl w-full shadow-2xl ring-1 ring-white/20 p-2"
         onClick={(e) => e.stopPropagation()}
       >
         <button
