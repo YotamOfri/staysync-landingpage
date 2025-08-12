@@ -5,7 +5,7 @@ import {
   SiInstagram,
   SiTelegram,
 } from "react-icons/si";
-
+import Logo from "@/assets/StaysyncLogo.svg";
 export function IntegrationMockup() {
   const platforms = [
     {
@@ -76,8 +76,8 @@ export function IntegrationMockup() {
           }}
         >
           <div className="relative">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/30">
-              <span className="text-white text-2xl font-bold">AI</span>
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/30">
+              <img className="rounded-md" src={Logo} alt="" />
             </div>
             {/* Pulsing ring effect */}
             <motion.div
