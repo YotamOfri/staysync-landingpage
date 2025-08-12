@@ -1,7 +1,11 @@
 import { animate, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export function AnimatedNumber({ value }) {
+interface AnimatedNumberProps {
+  value: number;
+}
+
+export function AnimatedNumber({ value }: AnimatedNumberProps) {
   const [currentValue, setCurrentValue] = useState(value);
 
   useEffect(() => {
@@ -13,7 +17,7 @@ export function AnimatedNumber({ value }) {
       },
     });
     return () => controls.stop();
-  }, [value]);
+  }, [value, currentValue]);
 
   return <motion.span>{currentValue}</motion.span>;
 }

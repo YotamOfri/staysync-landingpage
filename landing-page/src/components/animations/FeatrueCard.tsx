@@ -1,13 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+interface Props {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}
+
 export default function FeatureCard({
   title,
   description,
   children,
   className = "",
   delay = 0,
-}) {
+}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}

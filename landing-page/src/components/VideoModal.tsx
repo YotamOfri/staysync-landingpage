@@ -1,7 +1,11 @@
-import React from "react";
 import { X } from "lucide-react";
 
-const VideoModal = ({ videoUrl, onClose }) => {
+interface Props {
+  videoUrl: string;
+  onClose: () => void;
+}
+
+const VideoModal = ({ videoUrl, onClose }: Props) => {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"

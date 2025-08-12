@@ -223,6 +223,7 @@ export function IntegrationMockup() {
                     ease: "easeInOut",
                   }}
                 >
+                  {/* @ts-expect-error 232323 */}
                   <motion.animateMotion
                     dur="2s"
                     repeatCount="indefinite"

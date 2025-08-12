@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TermsAndPrivacy() {
   return (
     <div className="relative bg-gray-900 min-h-screen py-20 px-6 sm:px-10 lg:px-20 text-gray-300">

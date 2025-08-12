@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, PlayCircle } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import ChatAnimation from "./ChatAnimation";
 import StatsCounter from "./StatsCounter";
 import { useState } from "react";

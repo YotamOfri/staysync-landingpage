@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "@/assets/StaysyncLogo.svg";
 
 interface NavigationProps {
