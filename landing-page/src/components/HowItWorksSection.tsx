@@ -7,7 +7,7 @@ const HowItWorksSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">איך זה עובד?</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            התקנה פשוטה בשלושה שלבים והממזכירה AI מוכנה לעבודה
+            התקנה פשוטה בשלושה שלבים והעוזר האישי AI מוכן לעבודה
           </p>
         </div>
 
@@ -17,9 +17,9 @@ const HowItWorksSection: React.FC = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">1</span>
             </div>
-            <h3 className="text-xl font-bold mb-4">הרשמה והתקנה</h3>
+            <h3 className="text-xl font-bold mb-4">התאמה אישית</h3>
             <p className="text-gray-400">
-              הירשם לשירות, חבר את מספר הטלפון ואת חשבונות הוואטסאפ שלך
+              אנחנו מספקים לעוזר האישי AI את המידע על העסק שלך ואת סוגי השירותים
             </p>
           </div>
 
@@ -28,9 +28,10 @@ const HowItWorksSection: React.FC = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">2</span>
             </div>
-            <h3 className="text-xl font-bold mb-4">התאמה אישית</h3>
+            <h3 className="text-xl font-bold mb-4">התקנה</h3>
             <p className="text-gray-400">
-              הגדר את הממזכירה AI עם המידע על העסק שלך ואת סוגי השירותים
+              אנחנו מחברים את העוזר האישי לפלטפורמות בהן העסק שלכם מתנהל מול
+              לקוחות וליומן שלכם
             </p>
           </div>
 
@@ -41,7 +42,7 @@ const HowItWorksSection: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold mb-4">התחל לעבוד</h3>
             <p className="text-gray-400">
-              הממזכירה AI מוכנה לענות על שיחות ולקבוע פגישות 24/7
+              העוזר האישי AI מוכן לענות על שיחות ולקבוע פגישות 24/7
             </p>
           </div>
         </div>

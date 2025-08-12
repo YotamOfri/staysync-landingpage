@@ -92,7 +92,7 @@ export function DashboardMockup() {
           >
             <Activity className="w-3 h-3 text-white" />
           </motion.div>
-          לוח בקרה - מזכירה AI
+          לוח בקרה - עוזר אישי AI
         </h4>
         <motion.div
           className="flex items-center gap-1 text-green-400 text-xs"

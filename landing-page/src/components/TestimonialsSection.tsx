@@ -8,7 +8,7 @@ const TestimonialsSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">מה הלקוחות שלנו אומרים</h2>
           <p className="text-gray-400 text-lg">
-            אלפי עסקים כבר סומכים על הממזכירה AI שלנו
+            אלפי עסקים כבר סומכים על העוזר האישי AI שלנו
           </p>
         </div>
 
@@ -24,7 +24,7 @@ const TestimonialsSection: React.FC = () => {
               ))}
             </div>
             <p className="text-gray-300 mb-6">
-              "הממזכירה AI שינתה לנו את העסק! הלקוחות מקבלים מענה מיידי
+              "העוזר האישי AI שינה לנו את העסק! הלקוחות מקבלים מענה מיידי
               בוואטסאפ ובטלפון, ואנחנו כבר לא מפסידים שיחות."
             </p>
             <div className="flex items-center">
@@ -49,8 +49,8 @@ const TestimonialsSection: React.FC = () => {
               ))}
             </div>
             <p className="text-gray-300 mb-6">
-              "המערכת קלה לשימוש והלקוחות אוהבים לקבוע תורים בוואטסאפ. חוסכת
-              לנו המון זמן ועלויות."
+              "המערכת קלה לשימוש והלקוחות אוהבים לקבוע תורים בוואטסאפ. חוסכת לנו
+              המון זמן ועלויות."
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center ml-4">
@@ -74,8 +74,8 @@ const TestimonialsSection: React.FC = () => {
               ))}
             </div>
             <p className="text-gray-300 mb-6">
-              "הטכנולוגיה המתקדמת ביותר שראיתי. הממזכירה AI מנהלת שיחות טבעיות
-              ומקצועיות יותר מממזכירה אנושית!"
+              "הטכנולוגיה המתקדמת ביותר שראיתי. העוזר האישי AI מנהל שיחות טבעיות
+              ומקצועיות יותר ממזכירה אנושית!"
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center ml-4">
@@ -83,9 +83,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
               <div>
                 <div className="font-medium">מיכאל רוזן</div>
-                <div className="text-gray-400 text-sm">
-                  מנהל משרד עורכי דין
-                </div>
+                <div className="text-gray-400 text-sm">מנהל משרד עורכי דין</div>
               </div>
             </div>
           </div>

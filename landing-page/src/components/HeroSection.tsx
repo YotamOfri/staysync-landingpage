@@ -2,8 +2,11 @@ import React from "react";
 import { Phone, PlayCircle } from "lucide-react";
 import ChatAnimation from "./ChatAnimation";
 import StatsCounter from "./StatsCounter";
+import { useState } from "react";
+import VideoModal from "./VideoModal";
 
 const HeroSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="relative pt-32 pb-20">
       {/* Background Gradients */}
@@ -13,6 +16,14 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* New Feature Badge */}
+        <div className="inline-flex items-center bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm mb-8 border border-blue-500/30">
+          <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs ml-2">
+            חדש
+          </span>
+          עוזר אישי AI עם תמיכה בווטסאפ והודעות
+        </div>
+
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 mt-24">
           <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
@@ -26,7 +37,7 @@ const HeroSection: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          הבוט שלנו מנהל שיחות בווצאפ עם הלקוחות, קובע תורים, עונה לשאלות וחוסך
+          הבוט שלנו מנהל שיחות בווטסאפ עם הלקוחות, קובע תורים, עונה לשאלות וחוסך
           לך זמן – בכל תחום, בכל שעה.
         </p>
 
@@ -34,19 +45,29 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <button className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center">
             <Phone className="w-5 h-5 ml-2" />
-            התחל בחינם
+            התחל ללא עלות
           </button>
-          <button className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center"
+          >
             <PlayCircle className="w-5 h-5 ml-2" />
             צפה בהדגמה
           </button>
         </div>
+        {isModalOpen && (
+          <VideoModal
+            videoUrl="/public/videos/ChatBotVideo.mp4"
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
+
         <ChatAnimation />
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
           <div className="text-center">
             <div className="text-blue-400">
-              <StatsCounter end={99.9} suffix="%" />
+              <StatsCounter end={100} suffix="%" />
             </div>
             <div className="text-gray-400">זמינות</div>
           </div>
