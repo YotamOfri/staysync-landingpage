@@ -7,10 +7,17 @@ const VideoModal = ({ videoUrl, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
       onClick={onClose}
     >
-      <div className="relative bg-black rounded-lg overflow-hidden max-w-3xl w-full">
+      <div
+        className="relative bg-black rounded-lg overflow-hidden max-w-3xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
-          onClick={() => console.log("hi")}
-          className="absolute top-3 right-3 text-white hover:text-gray-300 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          className="absolute top-3 right-3 text-white hover:text-gray-300 cursor-pointer z-50"
+          type="button"
         >
           <X className="w-6 h-6" />
         </button>
