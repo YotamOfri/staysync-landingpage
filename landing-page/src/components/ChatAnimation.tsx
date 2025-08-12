@@ -41,7 +41,7 @@ export default function ChatAnimation() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden w-full max-w-lg mx-auto h-[420px] shadow-2xl">
+    <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden w-full max-w-lg mx-auto h-[420px] shadow-2xl z-50">
       {/* Top bar */}
       <div className="flex items-center gap-2 p-3 border-b border-white/10 bg-gray-900/70">
         <div className="flex gap-1.5">

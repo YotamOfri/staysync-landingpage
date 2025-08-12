@@ -5,7 +5,7 @@ import StatsCounter from "./StatsCounter";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-32 pb-20">
       {/* Background Gradients */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -24,18 +24,18 @@ const HeroSection: React.FC = () => {
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
-            הממזכירה הדיגיטלית
+            קבעו תורים בקלות
           </span>
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            שמדברת עם הלקוחות
+            הבוט שדואג ללקוחות שלך 24/7
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          מענה אוטומטי בוואטסאפ, הודעות וטלפון. קביעת פגישות חכמה וניהול לקוחות
-          מתקדם 24/7
+          הבוט שלנו מנהל שיחות בווצאפ עם הלקוחות, קובע תורים, עונה לשאלות וחוסך
+          לך זמן – בכל תחום, בכל שעה.
         </p>
 
         {/* CTA Buttons */}
@@ -64,7 +64,7 @@ const HeroSection: React.FC = () => {
           </div>
           <div className="text-center">
             <div className="text-green-400">
-              <StatsCounter end={10000} suffix="+" />
+              <StatsCounter end={56} suffix="+" />
             </div>
             <div className="text-gray-400">עסקים</div>
           </div>
