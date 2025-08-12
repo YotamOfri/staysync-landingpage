@@ -13,16 +13,8 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* New Feature Badge */}
-        <div className="inline-flex items-center bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm mb-8 border border-blue-500/30">
-          <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs ml-2">
-            חדש
-          </span>
-          ממזכירה AI עם תמיכה בוואטסאפ והודעות
-        </div>
-
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 mt-24">
           <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
             קבעו תורים בקלות
           </span>

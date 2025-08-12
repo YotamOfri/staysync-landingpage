@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Brain, Menu, X, Phone } from "lucide-react";
+import Logo from "@/assets/StaysyncLogo.svg";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -26,10 +27,10 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border  ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800"
-          : "bg-transparent"
+          ? "bg-gray-900/20 backdrop-blur-md border-gray-800"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,9 +38,10 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-white" />
+              {/* <Brain className="w-5 h-5 text-white" /> */}
+              <img className="rounded-md" src={Logo} alt="" />
             </div>
-            <span className="text-xl font-bold">ממזכירה AI</span>
+            <span className="text-xl font-bold">StaySync</span>
           </div>
 
           {/* Desktop Navigation */}

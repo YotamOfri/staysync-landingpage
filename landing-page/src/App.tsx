@@ -31,9 +31,9 @@ function App() {
       <IntegrationsSection />
       <FeaturesSection />
       <HowItWorksSection />
-      <TestimonialsSection />
-      <StatsSection />
-      <PricingSection />
+      {/* <TestimonialsSection /> */}
+      {/* <StatsSection /> */}
+      {/* <PricingSection /> */}
       <CTASection />
       <Footer />
     </div>
