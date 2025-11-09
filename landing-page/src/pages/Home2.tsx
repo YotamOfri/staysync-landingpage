@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Zap, Shield, Brain, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import AboutSection from "@/components/AboutSection";
-import FooterSection from "@/components/Footer";
-import LeadFormSection from "@/components/LeadGen";
+import Navbar from "../components/landing/Navbar";
+import HeroSection from "../components/landing/HeroSection";
+import FeaturesSection from "../components/landing/FeaturesSection";
+import AboutSection from "../components/landing/AboutSection";
+import FooterSection from "../components/landing/FooterSection";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <AboutSection />
-      <LeadFormSection />
       <FooterSection />
     </div>
   );

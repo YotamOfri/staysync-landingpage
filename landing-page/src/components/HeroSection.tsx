@@ -1,89 +1,125 @@
-import React from "react";
-import { PlayCircle } from "lucide-react";
-import ChatAnimation from "./ChatAnimation";
-import StatsCounter from "./StatsCounter";
-import { useState } from "react";
-import VideoModal from "./VideoModal";
+import React, { useEffect, useState, useRef } from "react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
-const HeroSection: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section id="details" className="relative pt-32 pb-20">
-      {/* Background Gradients */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-      </div>
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
+    >
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 mt-24">
-          <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
-            קבעו תורים בקלות
+      {/* Cursor-following orb */}
+      <div
+        className="absolute w-[500px] h-[500px] bg-black opacity-[0.04] rounded-full blur-3xl pointer-events-none"
+        style={{
+          left: `${mousePosition.x}px`,
+          top: `${mousePosition.y}px`,
+          transform: "translate(-50%, -50%)",
+          transition: "left 0.3s ease-out, top 0.3s ease-out",
+        }}
+      />
+
+      {/* Static animated orb */}
+      <div
+        className="absolute bottom-20 left-20 w-96 h-96 bg-black opacity-[0.02] rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+
+      <div
+        className={`relative max-w-6xl mx-auto text-center transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        {/* Floating badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white/50 backdrop-blur-sm mb-8 shadow-sm">
+          <Sparkles className="w-4 h-4" />
+          <span className="text-sm font-medium tracking-wide">
+            Enterprise AI Solutions
           </span>
-          <br />
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            הבוט שדואג ללקוחות שלך 24/7
-          </span>
+        </div>
+
+        {/* Main headline */}
+        <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8 leading-[0.9]">
+          <span className="block text-black">Run Your Business Smoothly</span>
+          <span className="block text-black mt-2">with Less Effort</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          הבוט שלנו מנהל שיחות בווטסאפ עם הלקוחות, קובע תורים, עונה לשאלות וחוסך
-          לך זמן – בכל תחום, בכל שעה.
+        {/* Subheadline */}
+        <p className="text-xl md:text-2xl text-black/60 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+          We build smart systems that manage your leads, engage customers, and
+          keep your business running - even when you're not working.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-          <button
-            onClick={() => {
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              });
-            }}
-            className="bg-indigo-400/85 text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-indigo-300/85 hover:cursor-pointer transition-all transform hover:scale-105 flex items-center duration-200"
-          >
-            התחל ללא עלות
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="bg-black hover:bg-black/90 text-white px-8 py-6 text-lg rounded-full group transition-all duration-300 hover:shadow-2xl hover:scale-105">
+            Schedule Demo
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <button
-            onClick={() => setIsModalOpen(true)}
-            className="text-white border border-gray-600 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors flex items-center hover:cursor-pointer hover:bg-white/5 duration-200"
+            // variant="outline"
+            className="border-2 border-black/20 hover:border-black hover:bg-black hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300"
           >
-            <PlayCircle className="w-5 h-5 ml-2" />
-            צפה בהדגמה
+            View Case Studies
           </button>
         </div>
-        {isModalOpen && (
-          <VideoModal
-            videoUrl="/public/videos/ChatBotVideo.mp4"
-            onClose={() => setIsModalOpen(false)}
-          />
-        )}
 
-        <ChatAnimation />
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
-          <div className="text-center">
-            <div className="text-blue-400">
-              <StatsCounter end={100} suffix="%" />
+        <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto mt-20 pt-20 border-t border-black/10">
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-black mb-2">
+              98%
             </div>
-            <div className="text-gray-400">זמינות</div>
-          </div>
-          <div className="text-center">
-            <div className="text-purple-400 text-3xl font-bold">24/7</div>
-            <div className="text-gray-400">שירות</div>
-          </div>
-          <div className="text-center">
-            <div className="text-green-400">
-              <StatsCounter end={56} suffix="+" />
+            <div className="text-sm text-black/50 uppercase tracking-wider font-medium">
+              Client Retention
             </div>
-            <div className="text-gray-400">עסקים</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-black mb-2">
+              $50M+
+            </div>
+            <div className="text-sm text-black/50 uppercase tracking-wider font-medium">
+              Revenue Generated
+            </div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-black mb-2">
+              150+
+            </div>
+            <div className="text-sm text-black/50 uppercase tracking-wider font-medium">
+              Enterprise Clients
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
